@@ -4,11 +4,11 @@ public class Solution {
 
 	public static void main(String[] args){
 		List<List<Integer>> traingle = List.of(List.of(2), List.of(3, 4), List.of(6, 5, 7), List.of(4, 1, 8, 3));
-		int result = new Solution().minimumPathSum(traingle);
+		int result = new Solution().minimumSumPath(traingle);
 		System.out.println(result);
 	}
 
-	public int minimumPathSum(List<List<Integer>> traingle) {
+	public int minimumSumPath(List<List<Integer>> traingle) {
 	
 		List<Integer> results = new ArrayList<>();
 		int n = traingle.size();
