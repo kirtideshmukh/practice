@@ -8,33 +8,35 @@
 import java.util.*;
 
 class Program {
+    public static boolean checkIfDirectionBreaks(int direction, int previousCell, int currentCell) {
+        int difference = currentCell - previousCell;
+        if (direction > 0) {
+            return difference < 0;
+        }
+        return difference > 0;
+    }
+
     public static boolean isMonotonic(int[] array) {
         int size = array.length;
-        if (size < 2) {
+        if (size <= 2) {
             return true;
         }
 
-        int i = 0;
-        for (; i < size - 2 && array[i] == array[i + 1]; i++) ;
+        int direction = array[1] - array[0];
 
-        if (i == size - 2) {
-            return true;
-        }
-
-        Boolean isInceasingOrDecreasingPattern = null;
-        isInceasingOrDecreasingPattern = array[i] < array[i + 1];
-        int counter = 0;
-        for (; counter < size - 2; counter++) {
+        for (int counter = 2; counter < size; counter++) {
+            int previousCell = array[counter - 1];
             int currentCell = array[counter];
-            int nextCell = array[counter + 1];
-            if (currentCell == nextCell) {
+
+            if (direction == 0) {
+                direction = currentCell - previousCell;
                 continue;
             }
-            if (isInceasingOrDecreasingPattern != (currentCell < nextCell)) {
+
+            if (checkIfDirectionBreaks(direction, previousCell, currentCell)) {
                 return false;
             }
         }
-
-        return isInceasingOrDecreasingPattern == (array[size - 2] < array[size - 1]);
+        return true;
     }
 }
