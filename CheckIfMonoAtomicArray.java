@@ -31,10 +31,10 @@ class Program {
                 continue;
             }
             if (isInceasingOrDecreasingPattern != (currentCell < nextCell)) {
-                break;
+                return false;
             }
         }
 
-        return counter == size - 2 && isInceasingOrDecreasingPattern == (array[size - 2] < array[size - 1]);
+        return isInceasingOrDecreasingPattern == (array[size - 2] < array[size - 1]);
     }
 }
