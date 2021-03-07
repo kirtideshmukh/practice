@@ -5,21 +5,21 @@ import java.util.*;
  *                  an amount.
  * Domain       :   Array
  * Level        :   Easy
- * Complexity   :   O(n) Time | O(1) Space ∈ n is the size of the input array
+ * Complexity   :   O(nlog(n)) Time | O(1) Space ∈ n is the size of the input array
  */
 class Program {
 
     public int nonConstructibleChange(int[] coins) {
         Arrays.sort(coins);
-        int change = 0;
+        int constructibleChange = 0;
         for (int counter = 0; counter < coins.length; counter++) {
-            if (change + 1 >= coins[counter]) {
-                change = change + coins[counter];
+            if (constructibleChange + 1 >= coins[counter]) {
+                constructibleChange = constructibleChange + coins[counter];
             } else {
-                return change + 1;
+                return constructibleChange + 1;
             }
         }
-        return change + 1;
+        return constructibleChange + 1;
     }
 }
 /*
