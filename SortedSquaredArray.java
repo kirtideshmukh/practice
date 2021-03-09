@@ -15,18 +15,9 @@ class Program {
         int size = array.length;
         int[] sortedSquaredArray = new int[size];
         for (int counter = 0; counter < size; counter++) {
-            if (array[counter] < 0) {
-                sortedSquaredArray[counter] = array[counter] * -1;
-            } else {
-                sortedSquaredArray[counter] = array[counter];
-            }
+            sortedSquaredArray[counter] = array[counter]*array[counter];
         }
         Arrays.sort(sortedSquaredArray);
-        for (int counter = 0; counter < size; counter++) {
-
-            sortedSquaredArray[counter] *= sortedSquaredArray[counter];
-
-        }
         return sortedSquaredArray;
     }
 }
