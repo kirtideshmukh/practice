@@ -18,23 +18,26 @@ class Program {
         int counter1 = 0;
         int counter2 = 0;
         int minDifference = Integer.MAX_VALUE;
-
+        int currentDifference = Integer.MAX_VALUE;
         Arrays.sort(arrayOne);
         Arrays.sort(arrayTwo);
 
         while ((counter1 < n) && (counter2 < m)) {
-            int currentDifference = Math.abs(arrayOne[counter1] - arrayTwo[counter2]);
-            if (currentDifference == 0) {
-                return new int[]{arrayOne[counter1], arrayTwo[counter2]};
+
+            int firstNumber = arrayOne[counter1];
+            int secondNumber = arrayTwo[counter2];
+            if (firstNumber < secondNumber) {
+                currentDifference =  secondNumber - firstNumber;
+                counter1++;
+            } else if (secondNumber < firstNumber) {
+                currentDifference = firstNumber - secondNumber;
+                counter2++;
+            } else {
+                return new int[]{firstNumber, secondNumber};
             }
             if (currentDifference < minDifference) {
                 minDifference = currentDifference;
-                pairWithSmallestDifference = new int[]{arrayOne[counter1], arrayTwo[counter2]};
-            }
-            if (arrayOne[counter1] < arrayTwo[counter2]) {
-                counter1++;
-            } else {
-                counter2++;
+                pairWithSmallestDifference = new int[]{firstNumber, secondNumber};
             }
         }
 
