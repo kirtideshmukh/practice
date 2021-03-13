@@ -1,7 +1,7 @@
 /**
  * Domain      :   Strings
  * Level       :   Easy
- * Complexity  :   O(n) Time | O(1) Space ∈ n is the length of the input string
+ * Complexity  :   O(n) Time | O(n) Space ∈ n is the length of the input string
  */
 
 import java.util.*;
