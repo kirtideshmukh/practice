@@ -1,6 +1,6 @@
 /**
  * Domain       :   Array
- * Level        :   Mediun
+ * Level        :   Medium
  * Concept      :   Traverse outer perimeter then inner and so on
  * Complexity   :   O(N) Time | O(M) Space ∈ N is the no. of elements in input array
                     and M = N + stack size for recursion (which is always <= height of outermost rectangle)
