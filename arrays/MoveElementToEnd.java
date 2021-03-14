@@ -11,28 +11,25 @@
 import java.util.*;
 
 class Program {
+    public static void swap(List<Integer> array, int i, int j) {
+        int temp = array.get(i);
+        array.set(i, array.get(j));
+        array.set(j, temp);
+    }
+
     public static List<Integer> moveElementToEnd(List<Integer> array, int toMove) {
         int left = 0;
         int right = array.size() - 1;
         while (left < right) {
-            int rightElement = array.get(right);
-            int leftElement = array.get(left);
-
-            if (rightElement != toMove && leftElement == toMove) {
-                array.remove(left);
-                array.add(left, rightElement);
-                array.remove(right);
-                array.add(right, toMove);
-                left++;
+            while (left < right && array.get(right) == toMove) {
                 right--;
             }
-            if (array.get(right) == toMove) {
-                right--;
+            if (array.get(left) == toMove) {
+                swap(array, left, right);
             }
-            if (array.get(left) != toMove) {
-                left++;
-            }
+            left++;
         }
         return array;
     }
 }
+
