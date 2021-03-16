@@ -1,5 +1,6 @@
 /**
- * Concept      :   Array is monoatomic if its elements, from left to right, are entirely non-increasing or entirely non-decreasing.
+ * Concept      :   Array is monoatomic if its elements, from left to right,
+                    are entirely non-increasing or entirely non-decreasing.
  * Domain       :   Array
  * Level        :   Medium
  * Complexity   :   O(n) Time | O(1) Space ∈ n is the size of the input array
