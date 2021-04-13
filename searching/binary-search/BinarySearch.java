@@ -17,9 +17,9 @@ class Program {
             if (potentialMatch == target) {
                 return middle;
             } else if (potentialMatch > target) {
-                right--;
+                right = middle - 1;
             } else {
-                left++;
+                left = middle + 1;
             }
         }
         return -1;
